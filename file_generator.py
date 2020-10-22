@@ -2,8 +2,8 @@ import random
 import os
 
 
-DIR_PATH = './name_list'
-NEW_FILE_PATH = './new_files'
+SOURCE_NAME_DIR = './name_list'
+NEW_FILE_DIR = './new_files'
 FILE_EXTENSIONS = [".txt", ".md"]
 
 
@@ -29,26 +29,29 @@ def create_file(directory, title, extension, content):
     file.close()
     return file_name 
 
+def create_random_file_from_source_dir(source_dir, file_extensions, destination):
+    source_files = get_source_files(source_dir)
+    my_random_file = pick_random_item(source_files)
+
+    file_path = os.path.join(source_dir, my_random_file)
+    potential_names = open_file(file_path)
+    
+    my_random_name = pick_random_item(potential_names).lower()
+    
+    file_title = my_random_file[0] + "_" + my_random_name
+    extension = pick_random_item(file_extensions)
+    content = my_random_name
+    file_name = create_file(destination, file_title, extension, content)
+
+    print(f"Created file: {file_name} \nContent: {content}")
+
 
 # -------------- Main --------------
 
 
 def main():
-    source_files = get_source_files(DIR_PATH)
-    my_random_file = pick_random_item(source_files)
-    # print(f"Selected source file :\n\t {my_random_file}")
-
-    file_path = os.path.join(DIR_PATH, my_random_file)
-    potential_names = open_file(file_path)
+    for i in range(100):
+        create_random_file_from_source_dir(SOURCE_NAME_DIR, FILE_EXTENSIONS, NEW_FILE_DIR)
     
-    my_random_name = pick_random_item(potential_names).lower()
-    # print(f"Selected name :\n\t {my_random_name}")
-    
-    file_title = my_random_file[0] + "_" + my_random_name
-    extension = pick_random_item(FILE_EXTENSIONS)
-    content = my_random_name
-    file_name = create_file(NEW_FILE_PATH, file_title, extension, content)
-
-    print(f"Created file: {file_name} \nContent: {content}")
 
 main()
