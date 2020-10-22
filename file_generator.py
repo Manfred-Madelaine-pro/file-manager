@@ -1,5 +1,5 @@
 import random
-
+import os
 # open list file
 # read the content 
 # pick random name
@@ -16,15 +16,15 @@ def pick_random_item(list):
     return list[random.randint(0, len(list))]
 
 def main():
-    path = './fruits_list.txt'
-    fruits = open_file(path)
-
-    # [print(f) for f in fruits]
-
-
-    print(pick_random_item(fruits))
-
-
-
+    list=[]
+    path = './name_list'
+    for root, dirs, files in os.walk(path):
+        for filename in files:
+            list += [filename]  
+    my_random_file = list[random.randint(0, len(list)-1)]
+    print(my_random_file)
+    my_random_file_path = open_file(path+"/"+my_random_file)
+    print(my_random_file_path)
+    return my_random_file_path
 
 main()
