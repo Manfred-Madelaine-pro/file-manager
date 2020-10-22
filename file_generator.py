@@ -2,13 +2,6 @@ import random
 import os
 
 
-# open list file
-# read the content 
-# pick random name
-# create a file with the name 
-# save content in it 
-
-
 DIR_PATH = './name_list'
 
 
@@ -26,6 +19,9 @@ def get_source_files(directory_path):
         for filename in files:
             list += [filename]  
     return list
+
+
+# -------------- Main --------------
 
 
 def main():
