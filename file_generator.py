@@ -1,10 +1,15 @@
 import random
 import os
+
+
 # open list file
 # read the content 
 # pick random name
 # create a file with the name 
 # save content in it 
+
+
+DIR_PATH = './name_list'
 
 
 def open_file(path):
@@ -13,18 +18,27 @@ def open_file(path):
     return lines
 
 def pick_random_item(list):
-    return list[random.randint(0, len(list))]
+    return list[random.randint(0, len(list)-1)]
 
-def main():
+def get_source_files(directory_path):
     list=[]
-    path = './name_list'
-    for root, dirs, files in os.walk(path):
+    for root, dirs, files in os.walk(directory_path):
         for filename in files:
             list += [filename]  
-    my_random_file = list[random.randint(0, len(list)-1)]
-    print(my_random_file)
-    my_random_file_path = open_file(path+"/"+my_random_file)
-    print(my_random_file_path)
-    return my_random_file_path
+    return list
+
+
+def main():
+    source_files = get_source_files(DIR_PATH)
+    my_random_file = pick_random_item(source_files)
+    print(f"Selected source file :\n\t {my_random_file}")
+
+    file_path = DIR_PATH + "/" + my_random_file
+    potential_names = open_file(file_path)
+    
+    my_random_name = pick_random_item(potential_names)
+    print(f"Selected name :\n\t {my_random_name}")
+
+    return potential_names
 
 main()
