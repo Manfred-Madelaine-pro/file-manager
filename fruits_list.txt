@@ -24,7 +24,6 @@ Bell Pepper
 Lettuce
 Cucumbers
 Celery
-Salad Mi11
 Corn
 Garlic
 Mushrooms
@@ -34,4 +33,3 @@ Sweet Potatoe
 Green Bean
 Cauliflower
 Green Onion
-Aspa
