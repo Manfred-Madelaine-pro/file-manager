@@ -31,6 +31,10 @@ def create_file(directory, title, extension, content):
     file.close()
     return file_name 
 
+def create_dir(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
 def create_random_file_from_source_dir(source_dir, file_extensions, destination):
     source_files = get_source_files(source_dir)
     my_random_file = pick_random_item(source_files)
@@ -44,6 +48,7 @@ def create_random_file_from_source_dir(source_dir, file_extensions, destination)
     extension = pick_random_item(file_extensions)
     content = my_random_name
     
+    create_dir(destination)
     return create_file(destination, file_title, extension, content)
 
 
