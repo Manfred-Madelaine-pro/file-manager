@@ -2,9 +2,11 @@ import random
 import os
 
 
-SOURCE_NAME_DIR = './name_list'
-NEW_FILE_DIR = './new_files'
+SOURCE_NAME_DIR = 'name_list'
+NEW_FILE_DIR = 'new_files'
 FILE_EXTENSIONS = [".txt", ".md"]
+
+NB_FILES_TO_CREATE = 10
 
 
 def open_file(path):
@@ -41,17 +43,17 @@ def create_random_file_from_source_dir(source_dir, file_extensions, destination)
     file_title = my_random_file[0] + "_" + my_random_name
     extension = pick_random_item(file_extensions)
     content = my_random_name
-    file_name = create_file(destination, file_title, extension, content)
-
-    print(f"Created file: {file_name} \nContent: {content}")
+    
+    return create_file(destination, file_title, extension, content)
 
 
 # -------------- Main --------------
 
 
-def main():
-    for i in range(100):
-        create_random_file_from_source_dir(SOURCE_NAME_DIR, FILE_EXTENSIONS, NEW_FILE_DIR)
+def main(): 
+    for i in range(NB_FILES_TO_CREATE):
+        file_name = create_random_file_from_source_dir(SOURCE_NAME_DIR, FILE_EXTENSIONS, NEW_FILE_DIR)
+        print(f"File #{i+1}: {file_name}")
     
 
 main()
