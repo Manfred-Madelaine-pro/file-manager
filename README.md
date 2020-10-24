@@ -18,21 +18,24 @@ File manager to analyse, structure and classify documents and directories automa
 
 ### Directory Generator
 
+- [] Create random directories
+- [] Create random files in those directories
+
 
 ### Structure Analyzer
 
-#### List of Files
-
-- [] Identify name and extension
-- [] Gather infos about each files
+- [x] Identify name and extension
+- [x] Gather basic infos about each files
 	- Name
 	- Extension 
 	- Date 
 	- Size
 	- Author (Official ?)
 	- ...
-- [] Put the infos in a json  
-- [] Store data somewhere (flat file, db...)
-- [] Display result summary
+- [x] Put the infos in a json  
+- [x] Store data somewhere (flat file, db...)
+- [x] Display result summary
 - [] Provide some global stats
+- [] Enhance the data gathered stats
+
 
