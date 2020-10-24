@@ -39,3 +39,21 @@ File manager to analyse, structure and classify documents and directories automa
 - [] Enhance the data gathered stats
 
 
+### Structure Modifyer
+
+- [] Get root, root's analyzed structure file, & filter action
+- [] List possible filter actions
+- [] 
+- [] 
+- [] 
+
+### Worker
+
+- [] Apply filter 
+- [] 
+- [] 
+
+
+### Global 
+
+- [] Link every steps together and allow multiple filter flows (linking the steps) 
