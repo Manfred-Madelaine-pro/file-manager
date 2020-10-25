@@ -4,7 +4,7 @@ import datetime
 
 
 ROOT = 'new_files'
-OUTPUT = 'output/'
+OUTPUT = 'analyzed_output/'
 STRUCTURE_NAME = 'analyzed_structure'
 
 DATE_FORMAT = '%Y-%m-%d-%H:%M:%S'
