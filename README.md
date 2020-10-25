@@ -3,6 +3,29 @@
 File manager to analyse, structure and classify documents and directories automatically.
 
 
+## Main objectives / Driving goals / Leitmotiv
+
+- Facilitate user's experience with files and directories management
+	- Cleanning a dirty directory (only once or dynamically)
+	- Listening to a directory for every updates and applying the cleaning
+- Archiving files and scheduling zip
+- Statistique sur l'état des données 
+	- Plus vieux fichiers
+	- Espace total 
+	- ... 
+- Collecting & sharing files with others 
+	- Listening to different sources
+
+
+## Dates
+
+### Started 
+Project pitched the 8th october 2020, and started the 22nd october 2020 
+
+### Release date 
+First expected release the friday 13th november 2020
+
+
 ## Tasks
 
 ### File Generator
@@ -37,20 +60,22 @@ File manager to analyse, structure and classify documents and directories automa
 - [x] Display result summary
 - [] Provide some global stats
 - [] Enhance the data gathered stats
+- [] Create an ID (human readable or UUID ?)
 
 
 ### Structure Modifyer
 
 - [] Get root, root's analyzed structure file, & filter action
 - [] List possible filter actions
+- [] Specify entries to ignore 
 - [] 
 - [] 
-- [] 
+
 
 ### Worker
 
+- [] Input two Analized files : Initial & Final => défini les actions à faire
 - [] Apply filter 
-- [] 
 - [] 
 
 
