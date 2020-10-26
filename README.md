@@ -41,8 +41,8 @@ First expected release the friday 13th november 2020
 
 ### Directory Generator
 
-- [] Create random directories
-- [] Create random files in those directories
+- [ ] Create random directories
+- [ ] Create random files in those directories
 
 
 ### Structure Analyzer
@@ -58,27 +58,24 @@ First expected release the friday 13th november 2020
 - [x] Put the infos in a json  
 - [x] Store data somewhere (flat file, db...)
 - [x] Display result summary
-- [] Provide some global stats
-- [] Enhance the data gathered stats
-- [] Create an ID (human readable or UUID ?)
+- [ ] Provide some global stats
+- [ ] Enhance the data gathered stats
+- [ ] Create an ID (human readable or UUID ?)
 
 
 ### Structure Modifyer
 
-- [] Get root, root's analyzed structure file, & filter action
-- [] List possible filter actions
-- [] Specify entries to ignore 
-- [] 
-- [] 
+- [ ] Get root, root's analyzed structure file, & filter action
+- [ ] List possible filter actions
+- [ ] Specify entries to ignore 
 
 
 ### Worker
 
-- [] Input two Analized files : Initial & Final => défini les actions à faire
-- [] Apply filter 
-- [] 
+- [ ] Input two Analized files : Initial & Final => défini les actions à faire
+- [ ] Apply filter 
 
 
 ### Global 
 
-- [] Link every steps together and allow multiple filter flows (linking the steps) 
+- [ ] Link every steps together and allow multiple filter flows (linking the steps) 
