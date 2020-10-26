@@ -1,9 +1,9 @@
-# File Manager 
+# :card_file_box: File Manager 
 
-File manager to analyse, structure and classify documents and directories automatically.
+A file manager to analyse, structure and classify documents automatically.
 
 
-## Main objectives / Driving goals / Leitmotiv
+## :trophy: Main objectives / Driving goals / Leitmotiv
 
 - Facilitate user's experience with files and directories management
 	- Cleanning a dirty directory (only once or dynamically)
@@ -17,16 +17,16 @@ File manager to analyse, structure and classify documents and directories automa
 	- Listening to different sources
 
 
-## Dates
+## :spiral_calendar: Dates
 
-### Started 
-Project pitched the 8th october 2020, and started the 22nd october 2020 
+### :rocket: Started 
+Project pitched the _8th october 2020_, and started the _22nd october 2020_
 
-### Release date 
-First expected release the friday 13th november 2020
+### :dart: Release date 
+First expected release the friday **13th november 2020** 
 
 
-## Tasks
+## :clipboard: Tasks
 
 ### File Generator
 
