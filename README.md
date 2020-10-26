@@ -79,3 +79,7 @@ First expected release the friday 13th november 2020
 ### Global 
 
 - [ ] Link every steps together and allow multiple filter flows (linking the steps) 
+
+### Automatic cleaning 
+
+- [ ] Listen to a source directory and apply a cleaner automatically 
