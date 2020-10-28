@@ -65,10 +65,11 @@ First expected release the friday **13th november 2020**
 
 ### Structure Modifyer
 
-- [ ] Get root, root's analyzed structure file, & filter action
-- [ ] List possible filter actions
-- [ ] Specify entries to ignore 
-
+- [x] Get the list of files to store
+- [x] Modify the files paths based on their creation dates
+- [x] Modify the files paths based on their exts
+- [x] Generate and save the json file in the right directory
+- [ ] Specify entries to ignore
 
 ### Worker
 
