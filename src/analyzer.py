@@ -3,9 +3,9 @@ import json
 import datetime
 
 
-ROOT = "new_files"
-DEST = "data/"
-STRUCTURE_NAME = "analyzed_data"
+ROOT = "root"
+DEST = "trees/"
+FILE_PREFIX = "tree"
 
 DATE_FORMAT = "%Y-%m-%d-%H:%M:%S"
 
@@ -54,7 +54,7 @@ def map_entry_to_DirEntry(entry):
 def prepare_dest_folder(root, dest):
     create_dir(dest)
     date = datetime.datetime.today().strftime(DATE_FORMAT)
-    dest_name = dest + "-".join([STRUCTURE_NAME, root, date]) + ".json"
+    dest_name = dest + "-".join([FILE_PREFIX, root, date]) + ".json"
     return dest_name
 
 
