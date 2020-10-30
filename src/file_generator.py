@@ -3,7 +3,7 @@ import os
 
 
 SOURCE_NAME_DIR = "name_list"
-NEW_FILE_DIR = "new_files"
+NEW_FILE_DIR = "root"
 FILE_EXTENSIONS = [".txt", ".md"]
 
 NB_FILES_TO_CREATE = 10
