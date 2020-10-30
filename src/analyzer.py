@@ -4,8 +4,8 @@ import datetime
 
 
 ROOT = "new_files"
-OUTPUT = "analyzed_output/"
-STRUCTURE_NAME = "analyzed_structure"
+DEST = "data/"
+STRUCTURE_NAME = "analyzed_data"
 
 DATE_FORMAT = "%Y-%m-%d-%H:%M:%S"
 
@@ -26,25 +26,22 @@ class DirEntry:
         return txt
 
 
-def analyze(root):
-    properties = retrieve_properties(root)
-
-    create_dir(OUTPUT)
-    date = datetime.datetime.today().strftime(DATE_FORMAT)
-    dest_name = OUTPUT + "-".join([STRUCTURE_NAME, root, date]) + ".json"
-    convert_to_json(properties, dest_name)
+def analyze(root, dest):
+    root_entries = retrieve_entries(root)
+    dest_name = prepare_dest_folder(root, dest)
+    serialized_data = serialize(root_entries)
+    convert_to_json(serialized_data, dest_name)
 
 
-def retrieve_properties(path):
-    properties = []
+def retrieve_entries(path):
+    entries = []
     with os.scandir(path) as it:
         for entry in it:
             dir_entry = map_entry_to_DirEntry(entry)
-            properties += [dir_entry]
+            entries += [dir_entry]
             if entry.is_dir():
-                properties += retrieve_properties(entry.path)
-
-    return properties
+                entries += retrieve_entries(entry.path)
+    return entries
 
 
 def map_entry_to_DirEntry(entry):
@@ -54,16 +51,25 @@ def map_entry_to_DirEntry(entry):
     )
 
 
+def prepare_dest_folder(root, dest):
+    create_dir(dest)
+    date = datetime.datetime.today().strftime(DATE_FORMAT)
+    dest_name = dest + "-".join([STRUCTURE_NAME, root, date]) + ".json"
+    return dest_name
+
+
 def create_dir(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
 
-def convert_to_json(data, destination):
-    serialized_data = [vars(d) for d in data]
-    with open(destination, "w", encoding="utf-8") as f:
-        json.dump(serialized_data, f, ensure_ascii=False, indent=4)
+def serialize(data):
+    return [vars(d) for d in data]
 
+
+def convert_to_json(data, destination):
+    with open(destination, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
     print(f"File created at {destination}")
 
 
@@ -71,7 +77,7 @@ def convert_to_json(data, destination):
 
 
 def main():
-    analyze(ROOT)
+    analyze(ROOT, DEST)
 
 
 main()
